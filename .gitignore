@@ -1,0 +1,12 @@
+# Secrets and Environment Variables
+.env
+.env.*
+secrets.yml
+*.pem
+*.key
+
+# Visual Studio Code
+.vscode
+
+# Mac OS
+.DS_Store
