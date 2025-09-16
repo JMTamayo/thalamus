@@ -1,4 +1,4 @@
-## Configurate Mosquitto Server:
+## Mosquitto Server Configuration:
 
 ### Install Mosquitto:
 
