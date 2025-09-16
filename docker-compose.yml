@@ -6,3 +6,11 @@ services:
       - 1883:1883
       - 9001:9001
     restart: unless-stopped
+  grafana:
+    build: grafana/.
+    container_name: grafana
+    ports:
+      - 3000:3000
+    env_file:
+      - grafana/config/.env
+    restart: unless-stopped
