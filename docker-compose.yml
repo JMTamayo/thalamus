@@ -12,5 +12,5 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - grafana/config/.env
+      - grafana/config/config.env
     restart: unless-stopped
