@@ -13,4 +13,15 @@ services:
       - 3000:3000
     env_file:
       - grafana/config/config.env
+    environment:
+      - GF_INSTALL_PLUGINS=grafana-mqtt-datasource,speakyourcode-button-panel
+    volumes:
+      - ./grafana/config/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana/config/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - grafana-storage:/var/lib/grafana
     restart: unless-stopped
+    depends_on:
+      - mosquitto
+
+volumes:
+  grafana-storage:
