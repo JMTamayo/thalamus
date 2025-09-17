@@ -12,7 +12,7 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - grafana/config/config.env
+      - grafana/config/.env
     environment:
       - GF_INSTALL_PLUGINS=grafana-mqtt-datasource,speakyourcode-button-panel
     volumes:

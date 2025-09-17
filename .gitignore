@@ -1,6 +1,5 @@
 # Secrets and Environment Variables
 .env
-.env.*
 secrets.yml
 *.pem
 *.key
