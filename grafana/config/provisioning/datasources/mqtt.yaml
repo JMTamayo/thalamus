@@ -1,7 +1,7 @@
 apiVersion: 1
 
 datasources:
-  - name: thalamus-mqtt
+  - name: thalamus-mqtt-oasis
     type: grafana-mqtt-datasource
     uid: eeyb2q9aigd1cb
     access: proxy

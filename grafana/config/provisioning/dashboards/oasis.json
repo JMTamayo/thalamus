@@ -39,49 +39,6 @@
                 "type": "grafana-mqtt-datasource",
                 "uid": "eeyb2q9aigd1cb"
             },
-            "description": "",
-            "fieldConfig": {
-                "defaults": {},
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 4,
-                "w": 5,
-                "x": 0,
-                "y": 1
-            },
-            "id": 8,
-            "options": {
-                "buttons": [
-                    {
-                        "datasource": "thalamus-oasis",
-                        "query": "",
-                        "text": "ON"
-                    },
-                    {
-                        "datasource": "thalamus-oasis",
-                        "query": "",
-                        "text": "OFF"
-                    }
-                ],
-                "orientation": "horizontal"
-            },
-            "pluginVersion": "0.3.2",
-            "targets": [
-                {
-                    "refId": "WaterPumpControl",
-                    "topic": "/oasis/control/pump"
-                }
-            ],
-            "title": "Pump Control",
-            "transparent": true,
-            "type": "speakyourcode-button-panel"
-        },
-        {
-            "datasource": {
-                "type": "grafana-mqtt-datasource",
-                "uid": "eeyb2q9aigd1cb"
-            },
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -107,7 +64,7 @@
                 "h": 6,
                 "w": 5,
                 "x": 0,
-                "y": 5
+                "y": 1
             },
             "id": 7,
             "options": {
@@ -148,7 +105,7 @@
                 "h": 1,
                 "w": 24,
                 "x": 0,
-                "y": 11
+                "y": 7
             },
             "id": 2,
             "panels": [],
@@ -185,7 +142,7 @@
                 "h": 7,
                 "w": 5,
                 "x": 0,
-                "y": 12
+                "y": 8
             },
             "id": 1,
             "options": {
@@ -285,7 +242,7 @@
                 "h": 7,
                 "w": 7,
                 "x": 5,
-                "y": 12
+                "y": 8
             },
             "id": 4,
             "options": {
@@ -346,7 +303,7 @@
                 "h": 7,
                 "w": 5,
                 "x": 12,
-                "y": 12
+                "y": 8
             },
             "id": 3,
             "options": {
@@ -446,7 +403,7 @@
                 "h": 7,
                 "w": 7,
                 "x": 17,
-                "y": 12
+                "y": 8
             },
             "id": 5,
             "options": {
@@ -483,7 +440,7 @@
         "list": []
     },
     "time": {
-        "from": "now-15m",
+        "from": "now-1h",
         "to": "now"
     },
     "timepicker": {},
