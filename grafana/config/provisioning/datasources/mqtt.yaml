@@ -7,6 +7,6 @@ datasources:
     access: proxy
     jsonData:
       uri: "tcp://mosquitto:1883"
-      username: "username" # TODO: Change to the real username
+      username: "${MQTT_USERNAME_OASIS}"
     secureJsonData:
-      password: "password" # TODO: Change to the real password
+      password: "${MQTT_PASSWORD_OASIS}"
