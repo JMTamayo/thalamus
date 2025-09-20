@@ -128,16 +128,16 @@
                         "barAlignment": 0,
                         "barWidthFactor": 0.6,
                         "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
+                        "fillOpacity": 10,
+                        "gradientMode": "opacity",
                         "hideFrom": {
                             "legend": false,
                             "tooltip": false,
                             "viz": false
                         },
                         "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
                         "pointSize": 5,
                         "scaleDistribution": {
                             "type": "linear"
@@ -156,6 +156,7 @@
                     "mappings": [],
                     "max": 100,
                     "min": 0,
+                    "noValue": "No data",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
@@ -286,16 +287,16 @@
                         "barAlignment": 0,
                         "barWidthFactor": 0.6,
                         "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
+                        "fillOpacity": 10,
+                        "gradientMode": "opacity",
                         "hideFrom": {
                             "legend": false,
                             "tooltip": false,
                             "viz": false
                         },
                         "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
                         "pointSize": 5,
                         "scaleDistribution": {
                             "type": "linear"
@@ -315,6 +316,7 @@
                     "mappings": [],
                     "max": 50,
                     "min": 0,
+                    "noValue": "No data",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
@@ -385,16 +387,16 @@
                         "barAlignment": 0,
                         "barWidthFactor": 0.6,
                         "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
+                        "fillOpacity": 10,
+                        "gradientMode": "hue",
                         "hideFrom": {
                             "legend": false,
                             "tooltip": false,
                             "viz": false
                         },
                         "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
+                        "lineInterpolation": "stepAfter",
+                        "lineWidth": 3,
                         "pointSize": 5,
                         "scaleDistribution": {
                             "type": "linear"
@@ -411,6 +413,7 @@
                         }
                     },
                     "mappings": [],
+                    "noValue": "No data",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
@@ -568,16 +571,19 @@
                         "barAlignment": 0,
                         "barWidthFactor": 0.6,
                         "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
+                        "fillOpacity": 10,
+                        "gradientMode": "opacity",
                         "hideFrom": {
                             "legend": false,
                             "tooltip": false,
                             "viz": false
                         },
                         "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
+                        "lineInterpolation": "smooth",
+                        "lineStyle": {
+                            "fill": "solid"
+                        },
+                        "lineWidth": 3,
                         "pointSize": 5,
                         "scaleDistribution": {
                             "type": "linear"
@@ -596,6 +602,7 @@
                     "mappings": [],
                     "max": 35,
                     "min": 0,
+                    "noValue": "No data",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
@@ -742,16 +749,16 @@
                         "barAlignment": 0,
                         "barWidthFactor": 0.6,
                         "drawStyle": "line",
-                        "fillOpacity": 0,
-                        "gradientMode": "none",
+                        "fillOpacity": 10,
+                        "gradientMode": "opacity",
                         "hideFrom": {
                             "legend": false,
                             "tooltip": false,
                             "viz": false
                         },
                         "insertNulls": false,
-                        "lineInterpolation": "linear",
-                        "lineWidth": 1,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
                         "pointSize": 5,
                         "scaleDistribution": {
                             "type": "linear"
@@ -770,6 +777,7 @@
                     "mappings": [],
                     "max": 100,
                     "min": 0,
+                    "noValue": "No data",
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
@@ -815,6 +823,114 @@
             "title": "Historical Relative Humidity of the Air",
             "transparent": true,
             "type": "timeseries"
+        },
+        {
+            "datasource": {
+                "type": "grafana-mqtt-datasource",
+                "uid": "eeyb2q9aigd1cb"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "fixed"
+                    },
+                    "mappings": [],
+                    "noValue": "No data",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": 0
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 4,
+                "x": 20,
+                "y": 13
+            },
+            "id": 16,
+            "options": {
+                "basemap": {
+                    "config": {
+                        "server": "streets",
+                        "showLabels": true,
+                        "theme": "auto"
+                    },
+                    "type": "osm-standard"
+                },
+                "controls": {
+                    "mouseWheelZoom": true,
+                    "showAttribution": true,
+                    "showDebug": false,
+                    "showLayercontrol": true,
+                    "showScale": true,
+                    "showZoom": true
+                },
+                "layers": [
+                    {
+                        "config": {
+                            "cluster": false,
+                            "clusterDistance": 20,
+                            "clusterMinDistance": 0,
+                            "clusterValue": "size",
+                            "color": {
+                                "fixed": "dark-red"
+                            },
+                            "enableGradient": false,
+                            "enableShadow": true,
+                            "fillOpacity": 0.2,
+                            "iconSize": 20,
+                            "pinShape": "marker",
+                            "selectIcon": "fa-location-arrow",
+                            "shape": "circle",
+                            "showLegend": true,
+                            "showPin": true,
+                            "size": {
+                                "fixed": 3,
+                                "max": 15,
+                                "min": 2
+                            }
+                        },
+                        "location": {
+                            "latitude": "latitude",
+                            "longitude": "longitude",
+                            "lookup": "device_id",
+                            "mode": "coords"
+                        },
+                        "name": "Device Location",
+                        "timeField": "Time",
+                        "titleField": "device_id",
+                        "type": "markers"
+                    }
+                ],
+                "view": {
+                    "id": "coords",
+                    "lat": 4,
+                    "lon": -73,
+                    "shared": false,
+                    "zoom": 5
+                }
+            },
+            "pluginVersion": "1.4.4",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "grafana-mqtt-datasource",
+                        "uid": "eeyb2q9aigd1cb"
+                    },
+                    "refId": "A",
+                    "topic": "/oasis/location"
+                }
+            ],
+            "title": "Location",
+            "transparent": true,
+            "type": "orchestracities-map-panel"
         }
     ],
     "preload": false,
@@ -831,5 +947,5 @@
     "timezone": "browser",
     "title": "Oasis",
     "uid": "adqrvdm",
-    "version": 7
+    "version": 10
 }
