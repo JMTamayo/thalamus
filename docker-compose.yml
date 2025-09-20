@@ -14,7 +14,7 @@ services:
     env_file:
       - grafana/config/.env
     environment:
-      - GF_INSTALL_PLUGINS=grafana-mqtt-datasource
+      - GF_INSTALL_PLUGINS=grafana-mqtt-datasource,orchestracities-map-panel
     volumes:
       - ./grafana/config/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/config/provisioning/dashboards:/etc/grafana/provisioning/dashboards
