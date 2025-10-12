@@ -48,7 +48,7 @@
             "type": "text"
         },
         {
-            "collapsed": true,
+            "collapsed": false,
             "gridPos": {
                 "h": 1,
                 "w": 24,
@@ -82,15 +82,19 @@
                             },
                             {
                                 "color": "light-orange",
-                                "value": 25
+                                "value": 20
                             },
                             {
                                 "color": "super-light-green",
-                                "value": 50
+                                "value": 40
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 60
                             },
                             {
                                 "color": "red",
-                                "value": 75
+                                "value": 80
                             }
                         ]
                     },
@@ -128,7 +132,7 @@
                         "uid": "eeyb2q9aigd1cb"
                     },
                     "refId": "SoilMoisture",
-                    "topic": "/oasis/measurements/soil/moisture"
+                    "topic": "/oasis/soil-moisture"
                 }
             ],
             "title": "Soil Moisture",
@@ -222,7 +226,7 @@
             "targets": [
                 {
                     "refId": "HistoricalSoilMoisture",
-                    "topic": "/oasis/measurements/soil/moisture"
+                    "topic": "/oasis/soil-moisture"
                 }
             ],
             "title": "Historical Soil Moisture",
@@ -237,21 +241,29 @@
             "fieldConfig": {
                 "defaults": {
                     "color": {
-                        "fixedColor": "blue",
-                        "mode": "fixed"
+                        "mode": "thresholds"
                     },
-                    "decimals": 1,
                     "mappings": [],
+                    "max": 100,
+                    "min": 0,
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
                             {
-                                "color": "green",
+                                "color": "red",
                                 "value": 0
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 20
+                            },
+                            {
+                                "color": "super-light-green",
+                                "value": 40
                             }
                         ]
                     },
-                    "unit": "mL/s"
+                    "unit": "percent"
                 },
                 "overrides": []
             },
@@ -261,13 +273,11 @@
                 "x": 10,
                 "y": 4
             },
-            "id": 7,
+            "id": 18,
             "options": {
-                "colorMode": "value",
-                "graphMode": "none",
-                "justifyMode": "auto",
+                "minVizHeight": 75,
+                "minVizWidth": 75,
                 "orientation": "auto",
-                "percentChangeColorMode": "standard",
                 "reduceOptions": {
                     "calcs": [
                         "lastNotNull"
@@ -275,9 +285,9 @@
                     "fields": "",
                     "values": false
                 },
-                "showPercentChange": false,
-                "textMode": "auto",
-                "wideLayout": true
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
             },
             "pluginVersion": "12.3.0-17750354453",
             "targets": [
@@ -286,12 +296,12 @@
                         "type": "grafana-mqtt-datasource",
                         "uid": "eeyb2q9aigd1cb"
                     },
-                    "refId": "WaterFlowRate",
-                    "topic": "/oasis/measurements/water/flowRate"
+                    "refId": "SoilMoisture",
+                    "topic": "/oasis/tank-level"
                 }
             ],
-            "title": "Water Flow Rate",
-            "type": "stat"
+            "title": "Tank Level",
+            "type": "gauge"
         },
         {
             "datasource": {
@@ -305,10 +315,10 @@
                         "mode": "fixed"
                     },
                     "custom": {
-                        "axisBorderShow": false,
+                        "axisBorderShow": true,
                         "axisCenteredZero": false,
                         "axisColorMode": "text",
-                        "axisLabel": "",
+                        "axisLabel": "Moisture",
                         "axisPlacement": "auto",
                         "barAlignment": 0,
                         "barWidthFactor": 0.6,
@@ -338,9 +348,8 @@
                             "mode": "off"
                         }
                     },
-                    "decimals": 1,
                     "mappings": [],
-                    "max": 50,
+                    "max": 100,
                     "min": 0,
                     "noValue": "No data",
                     "thresholds": {
@@ -352,7 +361,7 @@
                             }
                         ]
                     },
-                    "unit": "mL/s"
+                    "unit": "percent"
                 },
                 "overrides": []
             },
@@ -362,7 +371,7 @@
                 "x": 15,
                 "y": 4
             },
-            "id": 9,
+            "id": 19,
             "options": {
                 "legend": {
                     "calcs": [
@@ -381,106 +390,11 @@
             "pluginVersion": "12.3.0-17750354453",
             "targets": [
                 {
-                    "datasource": {
-                        "type": "grafana-mqtt-datasource",
-                        "uid": "eeyb2q9aigd1cb"
-                    },
-                    "refId": "HistoricalWaterFlowRate",
-                    "topic": "/oasis/measurements/water/flowRate"
+                    "refId": "HistoricalSoilMoisture",
+                    "topic": "/oasis/tank-level"
                 }
             ],
-            "title": "Water Flow Rate",
-            "transparent": true,
-            "type": "timeseries"
-        },
-        {
-            "datasource": {
-                "uid": "eeyb2q9aigd1cb"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "fixedColor": "blue",
-                        "mode": "fixed"
-                    },
-                    "custom": {
-                        "axisBorderShow": true,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisGridShow": false,
-                        "axisLabel": "",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 10,
-                        "gradientMode": "hue",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "stepAfter",
-                        "lineWidth": 3,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "showValues": false,
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "noValue": "No data",
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": 0
-                            }
-                        ]
-                    },
-                    "unit": "bool_on_off"
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 11,
-                "w": 4,
-                "x": 20,
-                "y": 4
-            },
-            "id": 8,
-            "options": {
-                "legend": {
-                    "calcs": [],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "hideZeros": false,
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "12.3.0-17750354453",
-            "targets": [
-                {
-                    "refId": "A",
-                    "topic": "/oasis/measurements/pump/state"
-                }
-            ],
-            "title": "Pump Status",
+            "title": "Historical Tank Level",
             "transparent": true,
             "type": "timeseries"
         },
@@ -571,7 +485,7 @@
                         "uid": "eeyb2q9aigd1cb"
                     },
                     "refId": "AirTemperature",
-                    "topic": "/oasis/measurements/air/temperature"
+                    "topic": "/oasis/air-temperature"
                 }
             ],
             "title": "Air Temperature",
@@ -668,7 +582,7 @@
             "targets": [
                 {
                     "refId": "HistoricalAirTemperature",
-                    "topic": "/oasis/measurements/air/temperature"
+                    "topic": "/oasis/air-temperature"
                 }
             ],
             "title": "Historical Air Temperature",
@@ -749,7 +663,7 @@
                         "uid": "eeyb2q9aigd1cb"
                     },
                     "refId": "RelativeHumidityOfTheAir",
-                    "topic": "/oasis/measurements/air/relativeHumidity"
+                    "topic": "/oasis/air-relative-humidity"
                 }
             ],
             "title": "Relative Humidity of the Air",
@@ -843,7 +757,7 @@
             "targets": [
                 {
                     "refId": "HistoricalRelativeHumidityOfTheAir",
-                    "topic": "/oasis/measurements/air/relativeHumidity"
+                    "topic": "/oasis/air-relative-humidity"
                 }
             ],
             "title": "Historical Relative Humidity of the Air",
@@ -951,7 +865,7 @@
                         "uid": "eeyb2q9aigd1cb"
                     },
                     "refId": "A",
-                    "topic": "/oasis/geolocation"
+                    "topic": "/oasis/location"
                 }
             ],
             "title": "Location",
@@ -973,5 +887,5 @@
     "timezone": "browser",
     "title": "Oasis",
     "uid": "adqrvdm",
-    "version": 15
+    "version": 18
 }
