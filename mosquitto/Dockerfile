@@ -1,4 +1,4 @@
-FROM eclipse-mosquitto:2
+FROM eclipse-mosquitto:2.0.22
 
 COPY ./config/mosquitto.conf /mosquitto/config/mosquitto.conf
 COPY ./config/passwd.txt /mosquitto/config/passwd.txt
