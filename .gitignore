@@ -1,9 +1,3 @@
-# Secrets and Environment Variables
-.env
-secrets.yml
-*.pem
-*.key
-
 # Visual Studio Code
 .vscode
 
