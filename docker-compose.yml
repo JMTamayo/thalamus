@@ -1,11 +1,4 @@
 services:
-  mosquitto:
-    build: mosquitto/.
-    container_name: mosquitto
-    ports:
-      - 1883:1883
-      - 9001:9001
-    restart: unless-stopped
   grafana:
     build: grafana/.
     container_name: grafana
@@ -19,9 +12,63 @@ services:
       - ./grafana/config/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/config/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana-storage:/var/lib/grafana
-    restart: unless-stopped
-    depends_on:
-      - mosquitto
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 384M
+        reservations:
+          cpus: '0.15'
+          memory: 128M
+
+  mosquitto:
+    build: mosquitto/.
+    container_name: mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-log:/mosquitto/log
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 128M
+        reservations:
+          cpus: '0.05'
+          memory: 64M
+
+  portainer:
+    build: portainer/.
+    container_name: portainer
+    ports:
+      - 9443:9443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 128M
+        reservations:
+          cpus: '0.05'
+          memory: 64M
+
+networks:
+  default:
+    name: thalamus-network
 
 volumes:
   grafana-storage:
+    name: thalamus-grafana-storage
+  portainer_data:
+    name: thalamus-portainer-data
+  mosquitto-data:
+    name: thalamus-mosquitto-data
+  mosquitto-log:
+    name: thalamus-mosquitto-log
