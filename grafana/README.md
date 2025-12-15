@@ -38,6 +38,6 @@ nano grafana/config/.env
 Add the following lines to the `.env` file:
 
 ```
-MQTT_USERNAME_OASIS=user
-MQTT_PASSWORD_OASIS=password
+MQTT_USERNAME=user
+MQTT_PASSWORD=password
 ```

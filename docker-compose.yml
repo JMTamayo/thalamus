@@ -13,14 +13,6 @@ services:
       - ./grafana/config/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana-storage:/var/lib/grafana
     restart: always
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 384M
-        reservations:
-          cpus: '0.15'
-          memory: 128M
 
   mosquitto:
     build: mosquitto/.
@@ -32,14 +24,6 @@ services:
       - mosquitto-data:/mosquitto/data
       - mosquitto-log:/mosquitto/log
     restart: always
-    deploy:
-      resources:
-        limits:
-          cpus: '0.2'
-          memory: 128M
-        reservations:
-          cpus: '0.05'
-          memory: 64M
 
   portainer:
     build: portainer/.
@@ -50,14 +34,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
     restart: always
-    deploy:
-      resources:
-        limits:
-          cpus: '0.2'
-          memory: 128M
-        reservations:
-          cpus: '0.05'
-          memory: 64M
 
 networks:
   default:
