@@ -1,12 +1,12 @@
 apiVersion: 1
 
 datasources:
-  - name: thalamus-mqtt-oasis
+  - name: thalamus-mqtt
     type: grafana-mqtt-datasource
     uid: eeyb2q9aigd1cb
     access: proxy
     jsonData:
       uri: "tcp://mosquitto:1883"
-      username: "${MQTT_USERNAME_OASIS}"
+      username: "${MQTT_USERNAME}"
     secureJsonData:
-      password: "${MQTT_PASSWORD_OASIS}"
+      password: "${MQTT_PASSWORD}"
