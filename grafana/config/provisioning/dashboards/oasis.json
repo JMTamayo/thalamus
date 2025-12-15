@@ -55,360 +55,9 @@
                 "x": 0,
                 "y": 3
             },
-            "id": 13,
-            "panels": [],
-            "title": "Soil Monitoring & Control",
-            "type": "row"
-        },
-        {
-            "datasource": {
-                "type": "grafana-mqtt-datasource",
-                "uid": "eeyb2q9aigd1cb"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "thresholds"
-                    },
-                    "mappings": [],
-                    "max": 100,
-                    "min": 0,
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "red",
-                                "value": 0
-                            },
-                            {
-                                "color": "light-orange",
-                                "value": 20
-                            },
-                            {
-                                "color": "super-light-green",
-                                "value": 40
-                            },
-                            {
-                                "color": "light-orange",
-                                "value": 60
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    },
-                    "unit": "humidity"
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 11,
-                "w": 5,
-                "x": 0,
-                "y": 4
-            },
-            "id": 14,
-            "options": {
-                "minVizHeight": 75,
-                "minVizWidth": 75,
-                "orientation": "auto",
-                "reduceOptions": {
-                    "calcs": [
-                        "lastNotNull"
-                    ],
-                    "fields": "",
-                    "values": false
-                },
-                "showThresholdLabels": false,
-                "showThresholdMarkers": true,
-                "sizing": "auto"
-            },
-            "pluginVersion": "12.3.0-17750354453",
-            "targets": [
-                {
-                    "datasource": {
-                        "type": "grafana-mqtt-datasource",
-                        "uid": "eeyb2q9aigd1cb"
-                    },
-                    "refId": "SoilMoisture",
-                    "topic": "/oasis/soil-moisture"
-                }
-            ],
-            "title": "Soil Moisture",
-            "type": "gauge"
-        },
-        {
-            "datasource": {
-                "type": "grafana-mqtt-datasource",
-                "uid": "eeyb2q9aigd1cb"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "fixedColor": "text",
-                        "mode": "fixed"
-                    },
-                    "custom": {
-                        "axisBorderShow": true,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisLabel": "Moisture",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 10,
-                        "gradientMode": "opacity",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "smooth",
-                        "lineWidth": 3,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "showValues": false,
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "max": 100,
-                    "min": 0,
-                    "noValue": "No data",
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": 0
-                            }
-                        ]
-                    },
-                    "unit": "humidity"
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 11,
-                "w": 5,
-                "x": 5,
-                "y": 4
-            },
-            "id": 15,
-            "options": {
-                "legend": {
-                    "calcs": [
-                        "lastNotNull"
-                    ],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "hideZeros": false,
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "12.3.0-17750354453",
-            "targets": [
-                {
-                    "refId": "HistoricalSoilMoisture",
-                    "topic": "/oasis/soil-moisture"
-                }
-            ],
-            "title": "Historical Soil Moisture",
-            "transparent": true,
-            "type": "timeseries"
-        },
-        {
-            "datasource": {
-                "type": "grafana-mqtt-datasource",
-                "uid": "eeyb2q9aigd1cb"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "mode": "thresholds"
-                    },
-                    "mappings": [],
-                    "max": 100,
-                    "min": 0,
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "red",
-                                "value": 0
-                            },
-                            {
-                                "color": "light-orange",
-                                "value": 20
-                            },
-                            {
-                                "color": "super-light-green",
-                                "value": 40
-                            }
-                        ]
-                    },
-                    "unit": "percent"
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 11,
-                "w": 5,
-                "x": 10,
-                "y": 4
-            },
-            "id": 18,
-            "options": {
-                "minVizHeight": 75,
-                "minVizWidth": 75,
-                "orientation": "auto",
-                "reduceOptions": {
-                    "calcs": [
-                        "lastNotNull"
-                    ],
-                    "fields": "",
-                    "values": false
-                },
-                "showThresholdLabels": false,
-                "showThresholdMarkers": true,
-                "sizing": "auto"
-            },
-            "pluginVersion": "12.3.0-17750354453",
-            "targets": [
-                {
-                    "datasource": {
-                        "type": "grafana-mqtt-datasource",
-                        "uid": "eeyb2q9aigd1cb"
-                    },
-                    "refId": "SoilMoisture",
-                    "topic": "/oasis/tank-level"
-                }
-            ],
-            "title": "Tank Level",
-            "type": "gauge"
-        },
-        {
-            "datasource": {
-                "type": "grafana-mqtt-datasource",
-                "uid": "eeyb2q9aigd1cb"
-            },
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "fixedColor": "text",
-                        "mode": "fixed"
-                    },
-                    "custom": {
-                        "axisBorderShow": true,
-                        "axisCenteredZero": false,
-                        "axisColorMode": "text",
-                        "axisLabel": "Moisture",
-                        "axisPlacement": "auto",
-                        "barAlignment": 0,
-                        "barWidthFactor": 0.6,
-                        "drawStyle": "line",
-                        "fillOpacity": 10,
-                        "gradientMode": "opacity",
-                        "hideFrom": {
-                            "legend": false,
-                            "tooltip": false,
-                            "viz": false
-                        },
-                        "insertNulls": false,
-                        "lineInterpolation": "smooth",
-                        "lineWidth": 3,
-                        "pointSize": 5,
-                        "scaleDistribution": {
-                            "type": "linear"
-                        },
-                        "showPoints": "auto",
-                        "showValues": false,
-                        "spanNulls": false,
-                        "stacking": {
-                            "group": "A",
-                            "mode": "none"
-                        },
-                        "thresholdsStyle": {
-                            "mode": "off"
-                        }
-                    },
-                    "mappings": [],
-                    "max": 100,
-                    "min": 0,
-                    "noValue": "No data",
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": 0
-                            }
-                        ]
-                    },
-                    "unit": "percent"
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 11,
-                "w": 5,
-                "x": 15,
-                "y": 4
-            },
-            "id": 19,
-            "options": {
-                "legend": {
-                    "calcs": [
-                        "lastNotNull"
-                    ],
-                    "displayMode": "list",
-                    "placement": "bottom",
-                    "showLegend": true
-                },
-                "tooltip": {
-                    "hideZeros": false,
-                    "mode": "single",
-                    "sort": "none"
-                }
-            },
-            "pluginVersion": "12.3.0-17750354453",
-            "targets": [
-                {
-                    "refId": "HistoricalSoilMoisture",
-                    "topic": "/oasis/tank-level"
-                }
-            ],
-            "title": "Historical Tank Level",
-            "transparent": true,
-            "type": "timeseries"
-        },
-        {
-            "collapsed": false,
-            "gridPos": {
-                "h": 1,
-                "w": 24,
-                "x": 0,
-                "y": 15
-            },
             "id": 12,
             "panels": [],
-            "title": "Air Monitoring & Geolocation",
+            "title": "Plant #1",
             "type": "row"
         },
         {
@@ -459,7 +108,7 @@
                 "h": 11,
                 "w": 5,
                 "x": 0,
-                "y": 16
+                "y": 4
             },
             "id": 1,
             "options": {
@@ -485,7 +134,7 @@
                         "uid": "eeyb2q9aigd1cb"
                     },
                     "refId": "AirTemperature",
-                    "topic": "/oasis/air-temperature"
+                    "topic": "/oasis/p001/air-temperature"
                 }
             ],
             "title": "Air Temperature",
@@ -560,7 +209,7 @@
                 "h": 11,
                 "w": 5,
                 "x": 5,
-                "y": 16
+                "y": 4
             },
             "id": 4,
             "options": {
@@ -582,7 +231,7 @@
             "targets": [
                 {
                     "refId": "HistoricalAirTemperature",
-                    "topic": "/oasis/air-temperature"
+                    "topic": "/oasis/p001/air-temperature"
                 }
             ],
             "title": "Historical Air Temperature",
@@ -637,7 +286,7 @@
                 "h": 11,
                 "w": 5,
                 "x": 10,
-                "y": 16
+                "y": 4
             },
             "id": 3,
             "options": {
@@ -663,7 +312,7 @@
                         "uid": "eeyb2q9aigd1cb"
                     },
                     "refId": "RelativeHumidityOfTheAir",
-                    "topic": "/oasis/air-relative-humidity"
+                    "topic": "/oasis/p001/air-humidity"
                 }
             ],
             "title": "Relative Humidity of the Air",
@@ -735,7 +384,7 @@
                 "h": 11,
                 "w": 5,
                 "x": 15,
-                "y": 16
+                "y": 4
             },
             "id": 11,
             "options": {
@@ -757,7 +406,7 @@
             "targets": [
                 {
                     "refId": "HistoricalRelativeHumidityOfTheAir",
-                    "topic": "/oasis/air-relative-humidity"
+                    "topic": "/oasis/p001/air-humidity"
                 }
             ],
             "title": "Historical Relative Humidity of the Air",
@@ -792,7 +441,7 @@
                 "h": 11,
                 "w": 4,
                 "x": 20,
-                "y": 16
+                "y": 4
             },
             "id": 16,
             "options": {
@@ -865,12 +514,341 @@
                         "uid": "eeyb2q9aigd1cb"
                     },
                     "refId": "A",
-                    "topic": "/oasis/location"
+                    "topic": "/oasis/p001/geolocation"
                 }
             ],
             "title": "Location",
             "transparent": true,
             "type": "orchestracities-map-panel"
+        },
+        {
+            "datasource": {
+                "type": "grafana-mqtt-datasource",
+                "uid": "eeyb2q9aigd1cb"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": 0
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 20
+                            },
+                            {
+                                "color": "super-light-green",
+                                "value": 40
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "humidity"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 5,
+                "x": 0,
+                "y": 15
+            },
+            "id": 14,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "12.3.0-17750354453",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "grafana-mqtt-datasource",
+                        "uid": "eeyb2q9aigd1cb"
+                    },
+                    "refId": "SoilMoisture",
+                    "topic": "/oasis/p001/soil-moisture-1"
+                }
+            ],
+            "title": "Soil Moisture #1",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-mqtt-datasource",
+                "uid": "eeyb2q9aigd1cb"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": 0
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 20
+                            },
+                            {
+                                "color": "super-light-green",
+                                "value": 40
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "humidity"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 5,
+                "x": 5,
+                "y": 15
+            },
+            "id": 18,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "12.3.0-17750354453",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "grafana-mqtt-datasource",
+                        "uid": "eeyb2q9aigd1cb"
+                    },
+                    "refId": "SoilMoisture",
+                    "topic": "/oasis/p001/soil-moisture-2"
+                }
+            ],
+            "title": "Soil Moisture #2",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-mqtt-datasource",
+                "uid": "eeyb2q9aigd1cb"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": 0
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 20
+                            },
+                            {
+                                "color": "super-light-green",
+                                "value": 40
+                            },
+                            {
+                                "color": "light-orange",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "humidity"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 5,
+                "x": 10,
+                "y": 15
+            },
+            "id": 19,
+            "options": {
+                "minVizHeight": 75,
+                "minVizWidth": 75,
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "sizing": "auto"
+            },
+            "pluginVersion": "12.3.0-17750354453",
+            "targets": [
+                {
+                    "datasource": {
+                        "type": "grafana-mqtt-datasource",
+                        "uid": "eeyb2q9aigd1cb"
+                    },
+                    "refId": "SoilMoisture",
+                    "topic": "/oasis/p001/average-soil-moisture"
+                }
+            ],
+            "title": "Average Soil Moisture",
+            "type": "gauge"
+        },
+        {
+            "datasource": {
+                "type": "grafana-mqtt-datasource",
+                "uid": "eeyb2q9aigd1cb"
+            },
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "text",
+                        "mode": "fixed"
+                    },
+                    "custom": {
+                        "axisBorderShow": true,
+                        "axisCenteredZero": false,
+                        "axisColorMode": "text",
+                        "axisLabel": "Moisture",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "barWidthFactor": 0.6,
+                        "drawStyle": "line",
+                        "fillOpacity": 10,
+                        "gradientMode": "opacity",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "insertNulls": false,
+                        "lineInterpolation": "smooth",
+                        "lineWidth": 3,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "showValues": false,
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "noValue": "No data",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": 0
+                            }
+                        ]
+                    },
+                    "unit": "humidity"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 9,
+                "x": 15,
+                "y": 15
+            },
+            "id": 15,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "displayMode": "list",
+                    "placement": "bottom",
+                    "showLegend": true
+                },
+                "tooltip": {
+                    "hideZeros": false,
+                    "mode": "single",
+                    "sort": "none"
+                }
+            },
+            "pluginVersion": "12.3.0-17750354453",
+            "targets": [
+                {
+                    "refId": "HistoricalSoilMoisture",
+                    "topic": "/oasis/soil-moisture"
+                }
+            ],
+            "title": "Historical Soil Moisture",
+            "transparent": true,
+            "type": "timeseries"
         }
     ],
     "preload": false,
@@ -887,5 +865,5 @@
     "timezone": "browser",
     "title": "Oasis",
     "uid": "adqrvdm",
-    "version": 18
+    "version": 1
 }
