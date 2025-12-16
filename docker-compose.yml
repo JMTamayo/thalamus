@@ -1,5 +1,7 @@
 services:
   grafana:
+    depends_on:
+      - mosquitto
     build: grafana/.
     container_name: grafana
     ports:
@@ -12,6 +14,8 @@ services:
       - ./grafana/config/provisioning/datasources:/etc/grafana/provisioning/datasources
       - ./grafana/config/provisioning/dashboards:/etc/grafana/provisioning/dashboards
       - grafana-storage:/var/lib/grafana
+    networks:
+      - thalamus-network
     restart: always
 
   mosquitto:
@@ -23,6 +27,8 @@ services:
     volumes:
       - mosquitto-data:/mosquitto/data
       - mosquitto-log:/mosquitto/log
+    networks:
+      - thalamus-network
     restart: always
 
   portainer:
@@ -33,11 +39,14 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
+    networks:
+      - thalamus-network
     restart: always
 
 networks:
-  default:
+  thalamus-network:
     name: thalamus-network
+    driver: bridge
 
 volumes:
   grafana-storage:
