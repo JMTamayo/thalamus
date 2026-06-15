@@ -1,2 +1,2 @@
-config/acl.conf
-config/passwd.txt
+config/acl.conf*
+config/passwd.txt*
